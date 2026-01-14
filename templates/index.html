@@ -215,7 +215,7 @@
         <!-- Message Form -->
         <div class="row justify-content-center">
             <div class="col-lg-8 col-md-10">
-                <form method="POST">
+                <form action="{% url 'portfolio' %}" method="post">
                     {% csrf_token %}
 
                     <div class="mb-3 text-start">
