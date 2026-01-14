@@ -33,7 +33,7 @@ def portfolio(request):
             body,
             settings.DEFAULT_FROM_EMAIL,
             [settings.EMAIL_HOST_USER],
-            fail_silently=False,
+            fail_silently=True,
         )
         messages.success(request, "✅ Your message has been sent successfully!")
         return redirect("portfolio")
