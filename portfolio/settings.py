@@ -35,7 +35,7 @@ if ENVIRONMENT == 'development':
 else:
     DEBUG = False    
 
-ALLOWED_HOSTS = ['localhost','127.0.0.1','anand-m71a.onrender.com']
+ALLOWED_HOSTS = ['https://anand-m71a.onrender.com']
 
 CSRF_TRUSTED_ORIGINS =['https://anand-m71a.onrender.com']
 
