@@ -7,3 +7,4 @@ Django>=4.2
 gunicorn
 psycopg[binary]
 django-jazzmin
+whitenoise
