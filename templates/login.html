@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login | Portfolio Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: white;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .login-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+      width: 100%;
+      max-width: 400px;
+    }
+    input {
+      background-color: rgba(255, 255, 255, 0.2) !important;
+      color: white !important;
+      border: none !important;
+    }
+    ::placeholder {
+      color: #ddd !important;
+    }
+    .btn-login {
+      background: linear-gradient(90deg, #00c6ff, #0072ff);
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-card text-center">
+    <h3 class="mb-4">🔐 Only for Administration Bro</h3>
+    {% if error %}
+      <div class="alert alert-danger">{{ error }}</div>
+    {% endif %}
+    <form method="POST">
+      {% csrf_token %}
+      <div class="mb-3">
+        <input type="text" name="username" class="form-control" placeholder="Username" required>
+      </div>
+      <div class="mb-3">
+        <input type="password" name="password" class="form-control" placeholder="Password" required>
+      </div>
+      <button type="submit" class="btn btn-login w-100 text-white">Login</button> <br><br>
+         <a href="{% url 'portfolio' %}" class="btn btn-outline-light px-4">PORTFOLIO</a>
+    </form>
+  </div>
+</body>
+</html>

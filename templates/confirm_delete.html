@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Confirm Delete</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #ef4444, #b91c1c);
+            font-family: "Poppins", sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+        }
+
+        .delete-card {
+            background: #ffffff;
+            max-width: 420px;
+            width: 100%;
+            border-radius: 18px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+            text-align: center;
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .delete-icon {
+            font-size: 3rem;
+            color: #ef4444;
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 10px;
+        }
+
+        .item-name {
+            color: #ef4444;
+            font-weight: 600;
+        }
+
+        p {
+            color: #6b7280;
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+        }
+
+        .btn-delete {
+            background: #ef4444;
+            color: #fff;
+            font-weight: 600;
+            border-radius: 12px;
+            padding: 12px 20px;
+            border: none;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .btn-delete:hover {
+            background: #dc2626;
+            box-shadow: 0 10px 20px rgba(239,68,68,.4);
+        }
+
+        .btn-cancel {
+            margin-top: 10px;
+            width: 100%;
+            border-radius: 12px;
+            padding: 12px;
+            font-weight: 500;
+        }
+
+        @media (max-width: 576px) {
+            .delete-card {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="delete-card">
+    <div class="delete-icon">⚠️</div>
+    <h3>Delete <span class="item-name">"{{ item }}"</span>?</h3>
+    <p>This action cannot be undone.</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn-delete">
+            Yes, Delete
+        </button>
+    </form>
+
+    <a href="{% url 'dashboard' %}" class="btn btn-outline-secondary btn-cancel">
+        Cancel
+    </a>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

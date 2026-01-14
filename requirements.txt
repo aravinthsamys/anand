@@ -1,0 +1,5 @@
+django
+pillow
+daphne
+django-environ
+dj_database_url
