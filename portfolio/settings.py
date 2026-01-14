@@ -35,7 +35,7 @@ if ENVIRONMENT == 'development':
 else:
     DEBUG = False    
 
-ALLOWED_HOSTS = ['https://anand-m71a.onrender.com']
+ALLOWED_HOSTS = ['anand-m71a.onrender.com']
 
 CSRF_TRUSTED_ORIGINS =['https://anand-m71a.onrender.com']
 
@@ -158,7 +158,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
-
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 import os
 
