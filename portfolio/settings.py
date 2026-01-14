@@ -35,9 +35,9 @@ if ENVIRONMENT == 'development':
 else:
     DEBUG = False    
 
-ALLOWED_HOSTS = ['localhost','127.0.0.1','anandr.onrender.com']
+ALLOWED_HOSTS = ['localhost','127.0.0.1','anand-m71a.onrender.com']
 
-CSRF_TRUSTED_ORIGINS =['https://speech2sign.onrender.com']
+CSRF_TRUSTED_ORIGINS =['https://anand-m71a.onrender.com']
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -52,7 +52,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
 
 
 # Application definition
