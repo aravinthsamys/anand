@@ -1,1 +1,1 @@
-web:daphne portfolio.asgi:application -b 0.0.0.0 -p $PORT
+web:daphne portfolio.wsgi:application --bind 0.0.0.0:$PORT
